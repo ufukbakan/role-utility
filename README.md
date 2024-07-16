@@ -5,9 +5,9 @@ Supports both CJS and ESM.
 
 ## Javascript example
 ```js
-import { role } from "role-utility";
+import { RoleUtility } from "role-utility";
 
-const { role, and, or } = RoleUtility();
+const { and, or } = RoleUtility();
 const isUaeAdmin = and("admin", "uae");
 const isTrAdmin = and("admin", "tr");
 const isMiddleEasternAdmin = or(isUaeAdmin, isTrAdmin);
@@ -19,15 +19,15 @@ console.log(isMiddleEasternAdmin(userRoles)); // true
 ## Typescript example
 
 ```ts
-import { role } from "role-utility";
+import { RoleUtility } from "role-utility";
 
 type Role = "admin" | "customer" | "uae" | "usa" | "tr";
 
-const { role, and, or } = RoleUtility<Role>();
+const { and, or } = RoleUtility<Role>();
 const isUaeAdmin = and("admin", "uae");
 const isTrAdmin = and("admin", "tr");
 const isMiddleEasternAdmin = or(isUaeAdmin, isTrAdmin);
 
-const userRoles = ["admin", "uae"];
+const userRoles: Role[] = ["admin", "uae"];
 console.log(isMiddleEasternAdmin(userRoles)); // true
 ```
