@@ -6,7 +6,7 @@ interface User {
 
 const isActivePremiumUser = and("customer", "premium", none("inactive", "blacklisted"));
 
-const activePremiumUserMiddleWare = (user: User) => isActivePremiumUser(...user.roles);
+const activePremiumUserMiddleWare = (user: User) => isActivePremiumUser(user.roles);
 
 let user1: User = {
     roles: ["inactive", "premium", "customer"],

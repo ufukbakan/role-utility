@@ -1,6 +1,6 @@
 {
     "name": "role-utility",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A common interface for managing roles",
     "main": "index.ts",
     "keywords": [

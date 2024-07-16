@@ -9,18 +9,18 @@ function main() {
 
     const user1Roles = ["customer", "tr"];
     console.log({
-        isAdmin: isAdmin(...user1Roles), // false
-        isUaeAdmin: isUaeAdmin(...user1Roles), // false
-        isTrAdmin: isTrAdmin(...user1Roles), // false
-        isMiddleEasternAdmin: isMiddleEasternAdmin(...user1Roles), // false
+        isAdmin: isAdmin(user1Roles), // false
+        isUaeAdmin: isUaeAdmin(user1Roles), // false
+        isTrAdmin: isTrAdmin(user1Roles), // false
+        isMiddleEasternAdmin: isMiddleEasternAdmin(user1Roles), // false
     });
 
     const user2Roles = ["admin", "uae"];
     console.log({
-        isAdmin: isAdmin(...user2Roles), // true
-        isUaeAdmin: isUaeAdmin(...user2Roles), // true
-        isTrAdmin: isTrAdmin(...user2Roles), // false
-        isMiddleEasternAdmin: isMiddleEasternAdmin(...user2Roles), // true
+        isAdmin: isAdmin(user2Roles), // true
+        isUaeAdmin: isUaeAdmin(user2Roles), // true
+        isTrAdmin: isTrAdmin(user2Roles), // false
+        isMiddleEasternAdmin: isMiddleEasternAdmin(user2Roles), // true
     });
 }
 

@@ -1,26 +1,26 @@
 type RoleParam<T extends string = string> = T | BooleanProcuder<T>;
-type BooleanProcuder<T extends string = string> = (...args: RoleParam<T>[]) => boolean;
+type BooleanProcuder<T extends string = string> = (args: RoleParam<T>[]) => boolean;
 
 function andRole<T extends string = string>(...acceptedRoles: RoleParam<T>[]): BooleanProcuder<T> {
-    return (...userRoles: RoleParam<T>[]) =>
+    return (userRoles: RoleParam<T>[]) =>
         acceptedRoles.every((acceptedRole) => {
-            if (typeof acceptedRole === "function") return acceptedRole(...userRoles);
+            if (typeof acceptedRole === "function") return acceptedRole(userRoles);
             return userRoles.includes(acceptedRole);
         });
 }
 
 function orRole<T extends string = string>(...acceptedRoles: RoleParam<T>[]): BooleanProcuder<T> {
-    return (...userRoles: RoleParam<T>[]) =>
+    return (userRoles: RoleParam<T>[]) =>
         acceptedRoles.some((acceptedRole) => {
-            if (typeof acceptedRole === "function") return acceptedRole(...userRoles);
+            if (typeof acceptedRole === "function") return acceptedRole(userRoles);
             return userRoles.includes(acceptedRole);
         });
 }
 
 export function noRole<T extends string = string>(...blockedRoles: RoleParam<T>[]): BooleanProcuder<T> {
-    return (...userRoles: RoleParam<T>[]) =>
+    return (userRoles: RoleParam<T>[]) =>
         !blockedRoles.some((blockedRole) => {
-            if (typeof blockedRole === "function") return blockedRole(...userRoles);
+            if (typeof blockedRole === "function") return blockedRole(userRoles);
             return userRoles.includes(blockedRole);
         });
 }
