@@ -1,0 +1,21 @@
+{
+    "name": "role-utility",
+    "version": "1.0.0",
+    "description": "A common interface for managing roles",
+    "main": "index.ts",
+    "keywords": [
+        "role-utility",
+        "role",
+        "roles",
+        "utility",
+        "manager",
+        "abstract",
+        "interface"
+    ],
+    "author": "Ufuk Bakan",
+    "license": "ISC",
+    "devDependencies": {
+        "esbuild": "^0.23.0",
+        "tsx": "^4.16.2"
+    }
+}

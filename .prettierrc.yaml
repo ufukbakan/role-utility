@@ -1,0 +1,14 @@
+trailingComma: es5
+tabWidth: 4
+singleQuote: false
+printWidth: 200
+endOfLine: crlf
+overrides:
+    - files: "*.{ts,tsx}"
+      options:
+          bracketSameLine: true
+          bracketSpacing: true
+          cursorOffset: -1
+          jsxSingleQuote: true
+          printWidth: 160
+          semi: true
