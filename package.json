@@ -1,6 +1,6 @@
 {
     "name": "role-utility",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "description": "A common interface for managing roles",
     "main": "./dist/cjs/index.js",
     "type": "module",
@@ -16,7 +16,7 @@
         "build": "npm run build:types && npm run build:esm && npm run build:cjs",
         "build:types": "tsc -p ./tsconfig.json",
         "build:cjs": "esbuild --target=es6 --outdir=dist/cjs index.ts --platform=node --format=cjs",
-        "build:esm": "esbuild --target=es6 --outdir=dist/esm index.ts --platform=browser --format=esm"
+        "build:esm": "esbuild --target=es6 --outdir=dist/esm index.ts --platform=node --format=esm"
     },
     "keywords": [
         "role-utility",
@@ -28,7 +28,11 @@
         "interface"
     ],
     "author": "Ufuk Bakan",
-    "license": "ISC",
+    "license": "GPL-3.0-only",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ufukbakan/role-utility.git"
+    },
     "devDependencies": {
         "esbuild": "^0.23.0",
         "tsx": "^4.16.2"
