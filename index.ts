@@ -17,7 +17,7 @@ function orRole<T extends string = string>(...acceptedRoles: RoleParam<T>[]): Bo
         });
 }
 
-export function noRole<T extends string = string>(...blockedRoles: RoleParam<T>[]): BooleanProcuder<T> {
+function noRole<T extends string = string>(...blockedRoles: RoleParam<T>[]): BooleanProcuder<T> {
     return (userRoles: RoleParam<T>[]) =>
         !blockedRoles.some((blockedRole) => {
             if (typeof blockedRole === "function") return blockedRole(userRoles);
@@ -25,7 +25,7 @@ export function noRole<T extends string = string>(...blockedRoles: RoleParam<T>[
         });
 }
 
-export const role = <T extends string>(role: RoleParam<T>) => andRole(role);
+const role = <T extends string>(role: RoleParam<T>) => andRole(role);
 
 interface RoleUtiltyInterface<T extends string> {
     and: typeof andRole<T>;
