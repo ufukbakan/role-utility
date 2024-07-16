@@ -1,8 +1,23 @@
 {
     "name": "role-utility",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "description": "A common interface for managing roles",
-    "main": "index.ts",
+    "main": "./dist/cjs/index.js",
+    "type": "module",
+    "exports": {
+        ".": {
+            "import": "./dist/esm/index.js",
+            "require": "./dist/cjs/index.js",
+            "types": "./dist/types/index.d.ts"
+        }
+    },
+    "scripts": {
+        "prepublishOnly": "npm run build",
+        "build": "npm run build:types && npm run build:esm && npm run build:cjs",
+        "build:types": "tsc -p ./tsconfig.json",
+        "build:cjs": "esbuild --target=es6 --outdir=dist/cjs index.ts --platform=node --format=cjs",
+        "build:esm": "esbuild --target=es6 --outdir=dist/esm index.ts --platform=browser --format=esm"
+    },
     "keywords": [
         "role-utility",
         "role",
