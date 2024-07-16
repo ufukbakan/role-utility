@@ -1,6 +1,6 @@
 {
     "name": "role-utility",
-    "version": "1.1.4",
+    "version": "1.1.5",
     "description": "A common interface for managing roles",
     "main": "./dist/cjs/index.js",
     "type": "module",
