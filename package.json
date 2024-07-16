@@ -4,6 +4,7 @@
     "description": "A common interface for managing roles",
     "main": "./dist/cjs/index.js",
     "type": "module",
+    "types": "./dist/types/index.d.ts",
     "exports": {
         ".": {
             "import": "./dist/esm/index.js",
